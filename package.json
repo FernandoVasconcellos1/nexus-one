@@ -1,0 +1,18 @@
+{
+  "name": "nexus-one-mvp",
+  "version": "1.0.3",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "check": "node --check src/server.js",
+    "preflight": "node scripts/preflight.js",
+    "migrate": "node scripts/migrate.js"
+  },
+  "dependencies": {
+    "pg": "^8.16.3"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

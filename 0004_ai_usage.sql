@@ -1,0 +1,3 @@
+CREATE TABLE IF NOT EXISTS ai_usages (id UUID PRIMARY KEY DEFAULT gen_random_uuid(), organization_id UUID NOT NULL REFERENCES organizations(id) ON DELETE CASCADE, mission_id UUID REFERENCES missions(id) ON DELETE CASCADE, task_id UUID REFERENCES tasks(id) ON DELETE CASCADE, agent TEXT NOT NULL, provider TEXT, model TEXT, input_units INTEGER, output_units INTEGER, duration_ms INTEGER, mode TEXT NOT NULL CHECK (mode IN ('LIVE','DEMO')), created_at TIMESTAMPTZ NOT NULL DEFAULT now());
+CREATE INDEX IF NOT EXISTS idx_ai_usage_org ON ai_usages(organization_id, created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_ai_usage_mission ON ai_usages(mission_id, created_at DESC);
