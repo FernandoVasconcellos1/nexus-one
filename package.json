@@ -4,11 +4,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "node src/server.js",
-    "check": "node --check src/server.js",
-    "preflight": "node scripts/preflight.js",
-    "migrate": "node scripts/migrate.js"
-  },
+  "start": "node servidor.js",
+  "check": "node --check servidor.js",
+  "preflight": "node preflight.js",
+  "migrate": "node migrate.js"
+}
   "dependencies": {
     "pg": "^8.16.3"
   },
